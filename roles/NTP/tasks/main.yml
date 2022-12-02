@@ -1,0 +1,15 @@
+  - name: Install Chrony on Ubuntu
+    apt:
+      name: chrony
+      state: latest
+      update_cache: yes
+
+  - name: Start Chrony on Ubuntu
+    systemd:
+      name: chrony
+      state: started
+
+  - name: Enable Chrony on Ubuntu
+    systemd:
+      name: chrony
+      enabled: yes

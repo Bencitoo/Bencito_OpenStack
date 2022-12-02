@@ -1,0 +1,11 @@
+  - name: Install etcd on Ubuntu
+    apt:
+      name: etcd
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Enable etcd on Ubuntu
+    systemd:
+      name: etcd
+      enabled: yes
